@@ -1,12 +1,11 @@
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
 
-        k = 0
+        # pointer to track new array index
+        idx = 0
         for i in range(len(nums)):
-            if nums[i] == val:
-                nums[i] = -1
-                k += 1
-        
-        nums.sort(reverse = True)
+            if nums[i] != val:
+                nums[idx] = nums[i]
+                idx += 1
 
-        return len(nums) - k
+        return idx

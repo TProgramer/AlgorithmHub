@@ -19,7 +19,7 @@ class Solution:
             
             location, depth = queue.popleft()
             nowY, nowX = location[0], location[1]
-            print(nowY, nowX, depth)
+            
             # search 4 ways to move
             for direc in range(4):
                 newY, newX = nowY + dirY[direc], nowX + dirX[direc]
@@ -30,7 +30,6 @@ class Solution:
 
                     # check if it's exit
                     if newY == 0 or newY == maze_row - 1 or newX == 0 or newX == maze_col - 1:
-                        print(newY, newX)
                         return depth
 
                     maze[newY][newX] = 'v'
